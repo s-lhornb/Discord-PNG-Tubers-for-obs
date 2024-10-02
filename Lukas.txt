@@ -1,0 +1,61 @@
+/* Flexbox container to align avatars horizontally */
+.avatars-container {
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Centers avatars vertically within the container */
+    gap: 10px; /* Spacing between avatars */
+}
+
+/* Common styles for hiding non-matching voice states and images */
+li.voice-state:not([data-reactid*="ID"]) { 
+    display: none; 
+}
+li > img[class^="Voice_avatar"] { 
+    display: none; 
+}
+
+/* User-specific visibility settings */
+li > img[class^="Voice_avatar"][src*="186430682183106560"] { 
+    display: block; 
+}
+
+
+/* Common avatar styling for consistent scaling */
+img[class^="Voice_avatar"] {
+    height: 100px; /* Fixed height for consistent scaling */
+    width: auto; /* Maintain aspect ratio */
+    border-radius: 0% !important;
+    object-fit: contain; /* Ensures images fit within the designated area */
+}
+
+/* User 1 - Idle avatar */
+img[class^="Voice_avatar"][src*="186430682183106560"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1277695840760107099/sloboMC.png?ex=66ce1a7a&is=66ccc8fa&hm=b93d8967a41a962a8cf3d592ebde012029565122114462ea55dc7cdd998c2674);
+}
+
+/* User 1 - Speaking avatar */
+img[class*="Speaking"][src*="186430682183106560"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1277695841020411934/sloboMO.png?ex=66ce1a7a&is=66ccc8fa&hm=e5fd1426e08a912c37847d42e1ae207c8c5376bb7a66c62ca59a3ea4938f522e);
+    border-color: rgba(0,0,0,0) !important;
+    position: relative;
+    animation-name: speak-now;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* Keyframe animation for speaking avatars */
+@keyframes speak-now {
+    0% { bottom: 0px; }
+    15% { bottom: 10px; }
+    30% { bottom: 0px; }
+}
+
+/* Common positioning adjustments */
+li[class^="Voice_voiceState"] { 
+    position: static; 
+}
+
+/* General styles for the overlay body */
+body {
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    margin: 0px auto; /* Centers content */
+}

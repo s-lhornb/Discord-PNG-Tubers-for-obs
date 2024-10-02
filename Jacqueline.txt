@@ -1,0 +1,61 @@
+/* Flexbox container to align avatars horizontally */
+.avatars-container {
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Centers avatars vertically within the container */
+    gap: 10px; /* Spacing between avatars */
+}
+
+/* Common styles for hiding non-matching voice states and images */
+li.voice-state:not([data-reactid*="ID"]) { 
+    display: none; 
+}
+li > img[class^="Voice_avatar"] { 
+    display: none; 
+}
+
+/* User-specific visibility settings */
+li > img[class^="Voice_avatar"][src*="378489537845919754"] { 
+    display: block; 
+}
+
+
+/* Common avatar styling for consistent scaling */
+img[class^="Voice_avatar"] {
+    height: 100px; /* Fixed height for consistent scaling */
+    width: auto; /* Maintain aspect ratio */
+    border-radius: 0% !important;
+    object-fit: contain; /* Ensures images fit within the designated area */
+}
+
+/* User 1 - Idle avatar */
+img[class^="Voice_avatar"][src*="378489537845919754"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1276657141704556574/Cat_Shiny.png?ex=66cef05d&is=66cd9edd&hm=e2bb1b5e0fac0030625d3e989aeb865e3828607e40bbecc06dd416e92e61640e&);
+}
+
+/* User 1 - Speaking avatar */
+img[class*="Speaking"][src*="378489537845919754"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1276657141410824273/Cat_Shiny_Talk.png?ex=66cef05d&is=66cd9edd&hm=5a242f1957a027dafa5ab9808cd59b87bf2ef4ae916f4a85ca7ae20ebd0cfa9d&);
+    border-color: rgba(0,0,0,0) !important;
+    position: relative;
+    animation-name: speak-now;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* Keyframe animation for speaking avatars */
+@keyframes speak-now {
+    0% { bottom: 0px; }
+    15% { bottom: 10px; }
+    30% { bottom: 0px; }
+}
+
+/* Common positioning adjustments */
+li[class^="Voice_voiceState"] { 
+    position: static; 
+}
+
+/* General styles for the overlay body */
+body {
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    margin: 0px auto; /* Centers content */
+}

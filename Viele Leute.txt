@@ -1,0 +1,183 @@
+/* Flexbox container to align avatars horizontally */
+.avatars-container {
+  display: inline-block;
+    gap: 10px; /* Spacing between avatars, adjust as needed */
+}
+
+li {
+  float: left;
+}
+
+/* Common styles for hiding non-matching voice states and images */
+li.voice-state:not([data-reactid*="ID"]) { 
+    display: none; 
+}
+li > img[class^="Voice_avatar"] { 
+    display: none; 
+}
+
+
+/* Jacqueline User-specific visibility settings */
+li > img[class^="Voice_avatar"][src*="378489537845919754"] { 
+    display: block; 
+}
+
+/* Lukas User-specific visibility settings */
+li > img[class^="Voice_avatar"][src*="186430682183106560"] { 
+    display: block; 
+}
+
+/* Max User-specific visibility settings */
+li > img[class^="Voice_avatar"][src*="665634844218490881"] { 
+    display: block; 
+}
+
+/* Nau User-specific visibility settings */
+li > img[class^="Voice_avatar"][src*="629360368392863788"] { 
+    display: block; 
+}
+
+/* Sascha User-specific visibility settings */
+li > img[class^="Voice_avatar"][src*="272738585717899264"] { 
+    display: block; 
+}
+
+/* Slobo User-specific visibility settings */
+li > img[class^="Voice_avatar"][src*="288402817255997447"] { 
+    display: block; 
+}
+li > img[class^="Voice_avatar"][src*="361215538837585923"] { 
+    display: block; 
+}
+
+/* Common avatar styling for scaling */
+img[class^="Voice_avatar"] {
+    height: 100px; /* Fixed height for consistent scaling */
+    width: auto; /* Width adjusts to maintain aspect ratio */
+    border-radius: 0% !important;
+}
+
+
+/* Jacqueline - Idle avatar */
+img[class^="Voice_avatar"][src*="378489537845919754"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1276657141704556574/Cat_Shiny.png?ex=66cef05d&is=66cd9edd&hm=e2bb1b5e0fac0030625d3e989aeb865e3828607e40bbecc06dd416e92e61640e&);
+}
+
+/* Jacqueline - Speaking avatar */
+img[class*="Speaking"][src*="378489537845919754"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1276657141410824273/Cat_Shiny_Talk.png?ex=66cef05d&is=66cd9edd&hm=5a242f1957a027dafa5ab9808cd59b87bf2ef4ae916f4a85ca7ae20ebd0cfa9d&);
+    border-color: rgba(0,0,0,0) !important;
+    position: relative;
+    animation-name: speak-now;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* Lukas - Idle avatar */
+img[class^="Voice_avatar"][src*="288402817255997447"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1277702931474284616/Idle.png?ex=66d36715&is=66d21595&hm=46e1c105fd83bdbc657067715f5188ef0114a073784456c6c9c7bc5767e50423&);
+}
+
+/* Lukas - Speaking avatar */
+img[class*="Speaking"][src*="288402817255997447"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1277702931982061740/Talk.gif?ex=66d36715&is=66d21595&hm=e2c2107bed4f600d84f0660143450ae44de049b71ed138df95e8261b9e7e8e0d&);
+    border-color: rgba(0,0,0,0) !important;
+    position: relative;
+    animation-name: speak-now;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* Max - Idle avatar */
+img[class^="Voice_avatar"][src*="665634844218490881"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1277724913024897114/maxMc.png?ex=66cede4e&is=66cd8cce&hm=dbadbf207e3b06a5039d24849e4262de05eb75c5dc74fc77ecc67498a81d9f30&);
+}
+
+/* Max - Speaking avatar */
+img[class*="Speaking"][src*="665634844218490881"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1279208353876279326/maxMc.png?ex=66d39b1e&is=66d2499e&hm=d64a96204de6688658a2554eb87da9ad75a6974a47ddb835198ea6cb3f1f5047&);
+    border-color: rgba(0,0,0,0) !important;
+    position: relative;
+    animation-name: speak-now;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* Nau - Idle and speaking avatars */
+img[class^="Voice_avatar"][src*="629360368392863788"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1279208383182012517/nauMC.png?ex=66d39b25&is=66d249a5&hm=eaead12287ccd12d49008dadedb202827e04e3a5befbdb1ab23f1c475f89a5d5&);
+}
+
+/* Nau - Speaking avatar */
+img[class*="Speaking"][src*="629360368392863788"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1279208382930223288/nauMo.png?ex=66d39b25&is=66d249a5&hm=baf00692924a72241c3432b536e77f2eabc5497dc15705f30e7008db5ec1d0c7&);
+    border-color: rgba(0,0,0,0) !important;
+    position: relative;
+    animation-name: speak-now;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* Sascha - Idle and speaking avatars */
+img[class^="Voice_avatar"][src*="272738585717899264"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1279208413901099129/SaschaMC.png?ex=66d39b2c&is=66d249ac&hm=a072d02b2fdfe5f4fb9ad9a1b9c58d5130d6eeb9900951253e0f418601af5f7c&);
+}
+
+/* Sascha - Speaking avatar */
+img[class*="Speaking"][src*="272738585717899264"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1279208413703700541/SaschaMo.png?ex=66d39b2c&is=66d249ac&hm=675a83a52d5b484077b6164526b3c8badec82d1ff5bb32afd82e4cf042a3833a&);
+    border-color: rgba(0,0,0,0) !important;
+    position: relative;
+    animation-name: speak-now;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* Slobo - Idle avatar */
+img[class^="Voice_avatar"][src*="186430682183106560"] {
+    Content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1279208435161890836/sloboMC.png?ex=66d39b31&is=66d249b1&hm=bf212aa8817cb5549b91763fb0ab092c74948037ab944b27be87b4825a60de6a&);
+}
+
+/* Slobo - Speaking avatar */
+img[class*="Speaking"][src*="186430682183106560"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1279208434977476702/sloboMO.png?ex=66d39b31&is=66d249b1&hm=bfc90cad56fc952dab40ecfd2105bb2ba05038f7fd0b65bc1775ec3a103355a5&);
+    border-color: rgba(0,0,0,0) !important;
+    position: relative;
+    animation-name: speak-now;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* Peter - Idle and speaking avatars */
+img[class^="Voice_avatar"][src*="361215538837585923"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1283498875990183969/peterMC.png?ex=66e336fa&is=66e1e57a&hm=c9715c6f7ee7a1b157190fe0f53b76b9f16a2b53297e2d3c5e2353997578c0a9&);
+}
+
+/* Peter - Speaking avatar */
+img[class*="Speaking"][src*="361215538837585923"] {
+    content: urlhttps://cdn.discordapp.com/attachments/1276656431206236314/1283498875671285831/peterMo.png?ex=66e336fa&is=66e1e57a&hm=a700843b18b0dbcbf98e8f992c1ba460eb362bc5da00ddaa5395d4980923457f&);
+    border-color: rgba(0,0,0,0) !important;
+    position: relative;
+    animation-name: speak-now;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* Keyframe animation for speaking avatars */
+@keyframes speak-now {
+    0% { bottom: 0px; }
+    15% { bottom: 10px; }
+    30% { bottom: 0px; }
+}
+
+/* Common positioning adjustments */
+li[class^="Voice_voiceState"] { 
+    position: static; 
+}
+
+
+/* General styles for the overlay body */
+body {
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    margin: 0px auto; /* Centers content */
+}

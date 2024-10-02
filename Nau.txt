@@ -1,0 +1,59 @@
+/* Flexbox container to align avatars horizontally */
+.avatars-container {
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Centers avatars vertically */
+    gap: 10px; /* Spacing between avatars, adjust as needed */
+}
+
+/* Common styles for hiding non-matching voice states and images */
+li.voice-state:not([data-reactid*="ID"]) { 
+    display: none; 
+}
+li > img[class^="Voice_avatar"] { 
+    display: none; 
+}
+
+li > img[class^="Voice_avatar"][src*="629360368392863788"] { 
+    display: block; 
+}
+
+/* Common avatar styling for scaling */
+img[class^="Voice_avatar"] {
+    height: 100%; /* Fixed height for consistent scaling */
+    width: auto; /* Width adjusts to maintain aspect ratio */
+    border-radius: 0% !important;
+}
+
+/* User 3 - Idle and speaking avatars */
+img[class^="Voice_avatar"][src*="629360368392863788"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1279191774488952914/nauMC.png?ex=66d38bad&is=66d23a2d&hm=0932dbc9a574a7ddd5daa8402561285ea76bada8cbcea45bef454acc0a609785&);
+}
+
+/* User 3 - Speaking avatar */
+img[class*="Speaking"][src*="629360368392863788"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1279191774132179014/nauMo.png?ex=66d38bad&is=66d23a2d&hm=7a4254fa7f93b696f6384330290f68ff3d39e8307a22dff641d64eb31fd8b2f2&);
+    border-color: rgba(0,0,0,0) !important;
+    position: relative;
+    animation-name: speak-now;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* Keyframe animation for speaking avatars */
+@keyframes speak-now {
+    0% { bottom: 0px; }
+    15% { bottom: 10px; }
+    30% { bottom: 0px; }
+}
+
+/* Common positioning adjustments */
+li[class^="Voice_voiceState"] { 
+    position: static; 
+}
+
+
+/* General styles for the overlay body */
+body {
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    margin: 0px auto; /* Centers content */
+}

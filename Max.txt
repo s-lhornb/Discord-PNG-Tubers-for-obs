@@ -1,0 +1,61 @@
+/* Flexbox container to align avatars horizontally */
+.avatars-container {
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Centers avatars vertically within the container */
+    gap: 10px; /* Spacing between avatars */
+}
+
+/* Common styles for hiding non-matching voice states and images */
+li.voice-state:not([data-reactid*="ID"]) { 
+    display: none; 
+}
+li > img[class^="Voice_avatar"] { 
+    display: none; 
+}
+
+/* User-specific visibility settings */
+li > img[class^="Voice_avatar"][src*="665634844218490881"] { 
+    display: block; 
+}
+
+
+/* Common avatar styling for consistent scaling */
+img[class^="Voice_avatar"] {
+    height: 100px; /* Fixed height for consistent scaling */
+    width: auto; /* Maintain aspect ratio */
+    border-radius: 0% !important;
+    object-fit: contain; /* Ensures images fit within the designated area */
+}
+
+/* User 1 - Idle avatar */
+img[class^="Voice_avatar"][src*="665634844218490881"] {
+    content: url(https://previews.dropbox.com/p/thumb/ACYmbdxqkCzNg9RU5LIIAPMQL5COZEMExVuRFKW3R6MzslI62BjlFd8-8tIojSKDHI-iR1pZ5BHI1XyDb6yYk5XMZHwQ-uqXqc090p39A9zOY4JdyQqOoutOWPs8sP_pAYblz4TF5k1wfjTOn4cg7-U8eTq8Y_DXFvqCsLhHlO4KT573nEa5ZRDyCN3lGaQrGyW5QKtgrx36I0ox8xykT6gWJvwT7EfHKbjf3qDj9PYycYMyvMAdB97_Fngjili_Llq0mffgnQB1fAEHHvS82wv8zsdcoCJSLIMT0MEOH4PImim0nbJ7fG9O92XJBQcSl0Zt67VHnvgsNFyb9l09VPvq/p.png?is_prewarmed=true);
+}
+
+/* User 1 - Speaking avatar */
+img[class*="Speaking"][src*="665634844218490881"] {
+    content: url(https://previews.dropbox.com/p/thumb/ACYmbdxqkCzNg9RU5LIIAPMQL5COZEMExVuRFKW3R6MzslI62BjlFd8-8tIojSKDHI-iR1pZ5BHI1XyDb6yYk5XMZHwQ-uqXqc090p39A9zOY4JdyQqOoutOWPs8sP_pAYblz4TF5k1wfjTOn4cg7-U8eTq8Y_DXFvqCsLhHlO4KT573nEa5ZRDyCN3lGaQrGyW5QKtgrx36I0ox8xykT6gWJvwT7EfHKbjf3qDj9PYycYMyvMAdB97_Fngjili_Llq0mffgnQB1fAEHHvS82wv8zsdcoCJSLIMT0MEOH4PImim0nbJ7fG9O92XJBQcSl0Zt67VHnvgsNFyb9l09VPvq/p.png?is_prewarmed=true);
+    border-color: rgba(0,0,0,0) !important;
+    position: relative;
+    animation-name: speak-now;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* Keyframe animation for speaking avatars */
+@keyframes speak-now {
+    0% { bottom: 0px; }
+    15% { bottom: 10px; }
+    30% { bottom: 0px; }
+}
+
+/* Common positioning adjustments */
+li[class^="Voice_voiceState"] { 
+    position: static; 
+}
+
+/* General styles for the overlay body */
+body {
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    margin: 0px auto; /* Centers content */
+}

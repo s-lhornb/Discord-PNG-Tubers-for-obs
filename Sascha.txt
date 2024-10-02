@@ -1,0 +1,59 @@
+/* Flexbox container to align avatars horizontally */
+.avatars-container {
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Centers avatars vertically */
+    gap: 10px; /* Spacing between avatars, adjust as needed */
+}
+
+/* Common styles for hiding non-matching voice states and images */
+li.voice-state:not([data-reactid*="ID"]) { 
+    display: none; 
+}
+li > img[class^="Voice_avatar"] { 
+    display: none; 
+}
+
+li > img[class^="Voice_avatar"][src*="272738585717899264"] { 
+    display: block; 
+}
+
+/* Common avatar styling for scaling */
+img[class^="Voice_avatar"] {
+    height: 100%; /* Fixed height for consistent scaling */
+    width: auto; /* Width adjusts to maintain aspect ratio */
+    border-radius: 0% !important;
+}
+
+/* User 3 - Idle and speaking avatars */
+img[class^="Voice_avatar"][src*="272738585717899264"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1279174900359233556/SaschaMC.png?ex=66d37bf6&is=66d22a76&hm=cd7afda2900bce1d5d734cc1566f0edad1f8a33862c75951bb12729564663b4e&);
+}
+
+/* User 3 - Speaking avatar */
+img[class*="Speaking"][src*="272738585717899264"] {
+    content: url(https://cdn.discordapp.com/attachments/1276656431206236314/1279174900694782012/SaschaMo.png?ex=66d37bf6&is=66d22a76&hm=5cc7e49cf734852996491d91e30f76f1e223c2319dc9f99b730c5d1aefe7dd1a&);
+    border-color: rgba(0,0,0,0) !important;
+    position: relative;
+    animation-name: speak-now;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+/* Keyframe animation for speaking avatars */
+@keyframes speak-now {
+    0% { bottom: 0px; }
+    15% { bottom: 10px; }
+    30% { bottom: 0px; }
+}
+
+/* Common positioning adjustments */
+li[class^="Voice_voiceState"] { 
+    position: static; 
+}
+
+
+/* General styles for the overlay body */
+body {
+    background-color: rgba(0, 0, 0, 0); /* Transparent background */
+    margin: 0px auto; /* Centers content */
+}
